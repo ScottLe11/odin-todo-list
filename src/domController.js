@@ -1,8 +1,8 @@
 export const DomController = (taskList) => {
-    const todoArea = document.getElementById("#todo-area");
+    const todoArea = document.getElementById("todo-area");
     
     const renderTodo = (taskList) => {
-        todoArea.innerHTML = '';
+        todoArea.innerHTML = ``;
 
         taskList.forEach((todo, index) => {
             const taskCard = document.createElement("div");
