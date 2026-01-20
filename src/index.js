@@ -33,11 +33,11 @@ const todoForm = document.querySelector('#add-todo-form');
 todoForm.addEventListener('submit', (e) =>{
     e.preventDefault();
 
-    const title = document.querySelector('#title-input');
-    const description = document.querySelector('#description-input');
-    const dueDate = document.querySelector('#dueDate-input');
-    const priority = document.querySelector('#priority-input');
-    const notes = document.querySelector('#notes-input');
+    const title = document.querySelector('#title-input').value;
+    const description = document.querySelector('#description-input').value;
+    const dueDate = document.querySelector('#dueDate-input').value;
+    const priority = document.querySelector('#priority-input').value;
+    const notes = document.querySelector('#notes-input').value;
 
     const mytodo = Todo(title, description, dueDate, priority, notes);
     console.log("Created Todo Object:", mytodo);
