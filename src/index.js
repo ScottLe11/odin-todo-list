@@ -3,22 +3,29 @@ import './style.css';
 import { Sidebar } from './sidebar.js';
 import { Todo } from './todo.js';
 import { ModalController } from './modal.js'
+import { ProjectManager } from './projectManager.js'
+import { DomController } from './domController.js';
 
 console.log("Working")
 
 const content = document.getElementById("content");
-const header = document.createElement("h1");
-header.textContent = "To Do List";
+const projectHeading = document.createElement("h1");
+const headingDiv = document.createElement("div");
+const addBtn = document.createElement("button");
+addBtn.id = "addBtn";
+addBtn.textContent = "Add new task";
 
-content.appendChild(header);
+headingDiv.classList.add("heading");
+projectHeading.textContent = "To Do List";
+
+headingDiv.appendChild(projectHeading);
+headingDiv.appendChild(addBtn);
+content.appendChild(headingDiv);
 
 const mySidebar = Sidebar();
+const myProjectManager = ProjectManager();
+const myDomController = DomController();
 
-//const mytodo = Todo("First to do", "Check out my first description", "goal #1", "wednesday", "Top");
-// console.log(mytodo.title);
-// console.log(mytodo.dueDate);
-
-//const myDomController = domController();
 
 
 const myModalController = ModalController();
@@ -45,4 +52,6 @@ todoForm.addEventListener('submit', (e) =>{
     todoForm.reset();
     //mytodo.completeToggle();
     myModalController.close();
+    myProjectManager.add(mytodo);
+    myDomController.renderTodo(myProjectManager.getAll());
 });
