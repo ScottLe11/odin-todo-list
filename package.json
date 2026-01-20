@@ -1,5 +1,5 @@
 {
-  "name": "webpack-boilerplatet",
+  "name": "webpack-boilerplate",
   "version": "1.0.0",
   "description": "starter template for webpack projects",
   "main": "index.js",
@@ -7,15 +7,18 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx webpack",
     "dev": "npx webpack serve",
-    "deploy": "git checkout gh-pages && git merge main --no-edit && npx webpack && git add dist -f && (git commit -m 'Deployment' || true) && git subtree push --prefix dist origin gh-pages && git checkout main"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "Scott Le",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^7.1.2",
+    "gh-pages": "^6.3.0",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.6",
+    "mini-css-extract-plugin": "^2.10.0",
     "style-loader": "^4.0.0",
     "webpack": "^5.104.1",
     "webpack-cli": "^6.0.1",

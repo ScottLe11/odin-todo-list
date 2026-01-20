@@ -24,18 +24,34 @@
         </ul>
     </nav>
 
-    <div id="menu-overlay" class="menu-overlay hidden">
+    <div id="menu-overlay" class="menu-overlay hidden"> </div>
+    <div id="modal-overlay" class="overlay hidden">
+            <div id = "todo-modal" class = "modal-box">
+                <button id = "close-modal">&times;</button>
+                <form id = add-todo-form action="/submit">
+                    <h2>Add new to-do</h2>
+                    <label>Title: </label><br>
+                    <input required type = "text" id = 'title-input' name = "title" placeholder="Title"><br>
+                    <label>Description: </label><br>
+                    <textarea id = 'description-input' name = "description" rows="4" cols="50"></textarea><br>
+                    <input required type = "date" id="dueDate-input" name="dueDate"><br>
+                    <label>Select priority: </label><br>
+                    <select required id = "priority-input" name = "priority">
+                        <option>Select value</option>
+                        <option value = "high">High</option>
+                        <option value = "medium">Medium</option>
+                        <option value = "low">Low</option>
+                    </select><br>
 
-        <div id = "todo-modal" class = "modal-box">
-            <button id = "close-modal">&times;</button>
-            <form id = add-todo-form>
-                <h2>Add new to-do</h2>
-                <input type = "text" placeholder="Enter task">
-                <buttom type = "submit">Submit</buttom>
-            </form>
+                    <label>Extra Notes</label><br>
+                    <textarea id = 'notes-input' name = "notes" rows="4" cols="50"></textarea><br>
+                    
+                    <button type = "submit">Submit</buttom>
+                </form>
 
+            </div>
         </div>
-    </div>
-    <h1>Test1</h1>
+   
+    <button id = "addBtn">Add New Task</button>
 </body>
 </html>

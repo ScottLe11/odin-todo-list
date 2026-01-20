@@ -10,7 +10,7 @@ body {
   height: 100%;
   background-color: #fff;
   z-index: 2000;
-  transition: left 0.5s ease; /* This creates the smooth slide animation */
+  transition: left 0.3s ease; /* This creates the smooth slide animation */
   box-shadow: 2px 0 5px rgba(0,0,0,0.2);
 }
 
@@ -31,3 +31,41 @@ body {
 .hidden {
   display: none;
 }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); /* Start transparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.4s ease; /* Fades the background in */
+  pointer-events: none; /* Allows clicking through when hidden */
+  z-index: 1000;
+}
+
+/* When active, fade to semi-transparent black */
+.overlay.active {
+  background-color: rgba(0, 0, 0, 0.6);
+  pointer-events: auto;
+}
+
+/* The Modal Box */
+.modal-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  transform: scale(0.7); /* Start smaller */
+  opacity: 0;            /* Start invisible */
+  transition: all 0.3s ease-in-out;
+}
+
+/* When active, pop to full size and opacity */
+.overlay.active .modal-box {
+  transform: scale(1);
+  opacity: 1;
+}
+
