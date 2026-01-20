@@ -1,3 +1,33 @@
 body {
   background-color: #f0f0f0;
 }
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -300px; /* Hidden off-screen to the left */
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  z-index: 2000;
+  transition: left 0.5s ease; /* This creates the smooth slide animation */
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+}
+
+.side-menu.active {
+  left: 0;
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1500;
+}
+
+.hidden {
+  display: none;
+}
