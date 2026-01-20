@@ -72,4 +72,17 @@ body {
   opacity: 1;
 }
 
+#addBtn{
+  background-color:aqua;
+}
 
+.heading{
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-card{
+  background-color: grey;
+  border: 2px grey;
+  border-radius: 10px;
+}
