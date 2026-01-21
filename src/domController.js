@@ -1,6 +1,6 @@
-export const DomController = (taskList) => {
+export const DomController = () => {
     const todoArea = document.getElementById("todo-area");
-    
+    const projectArea = document.getElementById("project-area");
     const renderTodo = (taskList) => {
         todoArea.innerHTML = ``;
 
@@ -17,6 +17,19 @@ export const DomController = (taskList) => {
         });
     };
 
-    return { renderTodo };
+    const renderProjects = (projectList) =>{
+        projectArea.innerHTML = ``;
+
+        projectList.forEach((project, index) => {
+            const projectItem = document.createElement("li");
+            //projectItem.classList.add("");
+            projectItem.textContent = project.getName();
+            projectItem.classList.add("project-link");
+            projectItem.dataset.index = index;
+            projectArea.appendChild(projectItem);
+        });
+    };
+
+    return { renderTodo, renderProjects };
     
 }

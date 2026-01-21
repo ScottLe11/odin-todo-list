@@ -8,10 +8,6 @@
 <body>
     <div id="content">
         <button id = "menu-toggle">
-            
-            <!-- <span class="bar">-</span>
-            <span class="bar">-</span>
-            <span class="bar">-</span> -->
             <img src = "./assets/menu.svg">
         </button>
     </div>
@@ -20,11 +16,14 @@
     </div>
     <nav id = "side-menu" class="side-menu">
         <button id = "close-menu">&times;</button>
-        <ul>
-            <li><a href = "#">Default</a></li>
+
+        <button id = "addProjectBtn">Add project</button>
+        <ul id = "project-area">
+            <li><a href = "#">Home</a></li>
         </ul>
     </nav>
 
+    <!-- modal for task entry -->
     <div id="menu-overlay" class="menu-overlay hidden"> </div>
     <div id="modal-overlay" class="overlay hidden">
             <div id = "todo-modal" class = "modal-box">
@@ -52,8 +51,19 @@
 
             </div>
         </div>
-    <!-- <div class = "Btns">
-        <button id = "addBtn">Add New Task</button>
-    </div> -->
+    
+    <div id="menu-overlay" class="menu-overlay hidden"> </div>
+        <div id = "project-overlay" class = "overlay hidden">
+            <div class="modal-box">
+            <button id="close-project">&times;</button>
+                <form id = add-project-form action="/submit">
+                    <label>New Project:</label><br>
+                    <input required type = "text" id = "projectName"><br>
+                    <button type = "submit">Submit</button>
+                </form>
+            </div>
+
+        </div>
+
 </body>
 </html>

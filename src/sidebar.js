@@ -14,6 +14,7 @@ export const Sidebar = () => {
     overlay.classList.add('hidden');
   };
 
+
   // Event Listeners
   toggleBtn.addEventListener('click', toggle);
   closeBtn.addEventListener('click', close);

@@ -1,17 +1,26 @@
-export const ProjectManager = () => {
-    let _todoList = [];
+import { Project } from './project.js'
 
-    const add = (newtoDo) => {
-        _todoList.push(newtoDo);
+export const ProjectManager = () =>{
+
+    let _projects = [Project("Home")];
+    let _currentProjectIndex = 0;
+
+    const add = (name) =>{
+        const newProject = Project(name);
+        _projects.push(newProject);
     };
 
-    const remove = (index) =>{
-        _todoList.splice(index, 1);
-    };
-    
-    const getAll = () =>{
-        return [..._todoList];
+    const getCurrentProject = () => {
+        return _projects[_currentProjectIndex];
     };
 
-    return { add, remove, getAll };
-};
+    const getAll = ()=>{
+        return[..._projects];
+    };
+
+    const setCurrentProject = (index) => {
+        _currentProjectIndex = index;
+    };
+
+    return { add, getCurrentProject, setCurrentProject, getAll};
+}

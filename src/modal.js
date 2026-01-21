@@ -1,6 +1,6 @@
-export const ModalController = () => {
-  const overlay = document.getElementById('modal-overlay');
-  const closeBtn = document.getElementById('close-modal');
+export const ModalController = (overlayId, closeBtnId) => {
+  const overlay = document.getElementById(overlayId);
+  const closeBtn = document.getElementById(closeBtnId);
 
   const open = () => {
     overlay.classList.remove('hidden'); // Show the element
