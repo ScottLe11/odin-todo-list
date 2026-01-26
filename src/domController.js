@@ -9,7 +9,7 @@ export const DomController = () => {
             taskCard.classList.add("task-card");
 
             taskCard.innerHTML = `
-            <h3>${todo.title}<h3>
+            <h3>${todo.title}</h3>
             <p>${todo.dueDate}</p>
             <button class = "deleteBtn" data-index = ${index}>Del</button>
             `;

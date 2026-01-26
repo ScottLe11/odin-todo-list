@@ -2,12 +2,18 @@ import { Project } from './project.js'
 
 export const ProjectManager = () =>{
 
-    let _projects = [Project("Home")];
+    let _projects = [];
     let _currentProjectIndex = 0;
 
     const add = (name) =>{
         const newProject = Project(name);
         _projects.push(newProject);
+    };
+    add("Home");
+
+    const reset = () =>{
+        _projects = [];
+        _currentProjectIndex = 0;
     };
 
     const getCurrentProject = () => {
@@ -22,5 +28,5 @@ export const ProjectManager = () =>{
         _currentProjectIndex = index;
     };
 
-    return { add, getCurrentProject, setCurrentProject, getAll};
+    return { add, getCurrentProject, setCurrentProject, getAll, reset};
 }
