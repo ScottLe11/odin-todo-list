@@ -147,3 +147,17 @@ todoForm.addEventListener('submit', (e) =>{
     myDomController.renderTodo(activeProject.getAll());
     syncStorage();
 });
+
+
+const todoArea = document.getElementById('todo-area');
+
+todoArea.addEventListener('click', (e) =>{
+    if (e.target.classList.contains('deleteBtn')){
+        const index = e.target.dataset.index;
+        const activeProject = myProjectManager.getCurrentProject();
+        activeProject.remove(index);
+
+        syncStorage();
+        myDomController.renderTodo(activeProject.getAll());
+    }
+});
