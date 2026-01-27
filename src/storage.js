@@ -1,14 +1,12 @@
+export const Storage = () => {
+  const saveData = (data) => {
+    localStorage.setItem("todoAppData", JSON.stringify(data));
+  };
 
-export const Storage = () =>{
+  const loadData = () => {
+    const data = localStorage.getItem("todoAppData");
+    return data ? JSON.parse(data) : null;
+  };
 
-    const saveData = (data) =>{
-        localStorage.setItem('todoAppData', JSON.stringify(data));
-    };
-
-    const loadData = () =>{
-        const data = localStorage.getItem('todoAppData');
-        return data ? JSON.parse(data) : null;
-    };
-
-    return {saveData, loadData};
-}
+  return { saveData, loadData };
+};

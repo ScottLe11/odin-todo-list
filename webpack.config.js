@@ -10,14 +10,14 @@ module.exports = {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
-    publicPath: '',
+    publicPath: "",
   },
 
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/template.html",
     }),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin(),
   ],
 
   module: {
@@ -29,14 +29,11 @@ module.exports = {
       {
         test: /\.html$/i,
         loader: "html-loader",
-        },
-        {
+      },
+      {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
       },
-
-    ]
+    ],
   },
-
-
 };

@@ -1,32 +1,31 @@
-import { Project } from './project.js'
+import { Project } from "./project.js";
 
-export const ProjectManager = () =>{
+export const ProjectManager = () => {
+  let _projects = [];
+  let _currentProjectIndex = 0;
 
-    let _projects = [];
-    let _currentProjectIndex = 0;
+  const add = (name) => {
+    const newProject = Project(name);
+    _projects.push(newProject);
+  };
+  add("Home");
 
-    const add = (name) =>{
-        const newProject = Project(name);
-        _projects.push(newProject);
-    };
-    add("Home");
+  const reset = () => {
+    _projects = [];
+    _currentProjectIndex = 0;
+  };
 
-    const reset = () =>{
-        _projects = [];
-        _currentProjectIndex = 0;
-    };
+  const getCurrentProject = () => {
+    return _projects[_currentProjectIndex];
+  };
 
-    const getCurrentProject = () => {
-        return _projects[_currentProjectIndex];
-    };
+  const getAll = () => {
+    return [..._projects];
+  };
 
-    const getAll = ()=>{
-        return[..._projects];
-    };
+  const setCurrentProject = (index) => {
+    _currentProjectIndex = index;
+  };
 
-    const setCurrentProject = (index) => {
-        _currentProjectIndex = index;
-    };
-
-    return { add, getCurrentProject, setCurrentProject, getAll, reset};
-}
+  return { add, getCurrentProject, setCurrentProject, getAll, reset };
+};

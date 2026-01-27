@@ -1,69 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="content">
-        <button id = "menu-toggle">
-            <img src = "./assets/menu.svg">
-        </button>
+      <button id="menu-toggle">
+        <img src="./assets/menu.svg" />
+      </button>
     </div>
-    <div id = todo-area>
+    <div id="todo-area"></div>
+    <nav id="side-menu" class="side-menu">
+      <button id="close-menu">&times;</button>
 
-    </div>
-    <nav id = "side-menu" class="side-menu">
-        <button id = "close-menu">&times;</button>
-
-        <button id = "addProjectBtn">Add project</button>
-        <ul id = "project-area">
-            <!-- <li><a href = "#">Home</a></li> -->
-        </ul>
+      <button id="addProjectBtn">Add project</button>
+      <ul id="project-area">
+        <!-- <li><a href = "#">Home</a></li> -->
+      </ul>
     </nav>
 
     <!-- modal for task entry -->
-    <div id="menu-overlay" class="menu-overlay hidden"> </div>
+    <div id="menu-overlay" class="menu-overlay hidden"></div>
     <div id="modal-overlay" class="overlay hidden">
-            <div id = "todo-modal" class = "modal-box">
-                <button id = "close-modal">&times;</button>
-                <form id = add-todo-form action="/submit">
-                    <h2>Add new to-do</h2>
-                    <label>Title: </label><br>
-                    <input required type = "text" id = 'title-input' name = "title" placeholder="Title"><br>
-                    <label>Description: </label><br>
-                    <textarea id = 'description-input' name = "description" rows="4" cols="50"></textarea><br>
-                    <input required type = "date" id="dueDate-input" name="dueDate"><br>
-                    <label>Select priority: </label><br>
-                    <select required id = "priority-input" name = "priority">
-                        <option>Select value</option>
-                        <option value = "high">High</option>
-                        <option value = "medium">Medium</option>
-                        <option value = "low">Low</option>
-                    </select><br>
+      <div id="todo-modal" class="modal-box">
+        <button id="close-modal">&times;</button>
+        <form id="add-todo-form" action="/submit">
+          <h2>Add new to-do</h2>
+          <label>Title: </label><br />
+          <input
+            required
+            type="text"
+            id="title-input"
+            name="title"
+            placeholder="Title"
+          /><br />
+          <label>Description: </label><br />
+          <textarea
+            id="description-input"
+            name="description"
+            rows="4"
+            cols="50"
+          ></textarea
+          ><br />
+          <input required type="date" id="dueDate-input" name="dueDate" /><br />
+          <label>Select priority: </label><br />
+          <select required id="priority-input" name="priority">
+            <option>Select value</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option></select
+          ><br />
 
-                    <label>Extra Notes</label><br>
-                    <textarea id = 'notes-input' name = "notes" rows="4" cols="50"></textarea><br>
-                    
-                    <button type = "submit">Submit</button>
-                </form>
+          <label>Extra Notes</label><br />
+          <textarea id="notes-input" name="notes" rows="4" cols="50"></textarea
+          ><br />
 
-            </div>
-        </div>
-    
-    <div id="menu-overlay" class="menu-overlay hidden"> </div>
-        <div id = "project-overlay" class = "overlay hidden">
-            <div class="modal-box">
-            <button id="close-project">&times;</button>
-                <form id = add-project-form action="/submit">
-                    <label>New Project:</label><br>
-                    <input required type = "text" id = "projectName"><br>
-                    <button type = "submit">Submit</button>
-                </form>
-            </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
 
-        </div>
-
-</body>
+    <div id="menu-overlay" class="menu-overlay hidden"></div>
+    <div id="project-overlay" class="overlay hidden">
+      <div class="modal-box">
+        <button id="close-project">&times;</button>
+        <form id="add-project-form" action="/submit">
+          <label>New Project:</label><br />
+          <input required type="text" id="projectName" /><br />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>

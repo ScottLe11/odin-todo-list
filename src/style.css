@@ -11,7 +11,7 @@ body {
   background-color: #fff;
   z-index: 2000;
   transition: left 0.3s ease; /* This creates the smooth slide animation */
-  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .side-menu.active {
@@ -59,7 +59,7 @@ body {
   padding: 2rem;
   border-radius: 8px;
   transform: scale(0.7); /* Start smaller */
-  opacity: 0;            /* Start invisible */
+  opacity: 0; /* Start invisible */
   transition: all 0.3s ease-in-out;
 }
 
@@ -69,16 +69,16 @@ body {
   opacity: 1;
 }
 
-#addBtn{
-  background-color:aqua;
+#addBtn {
+  background-color: aqua;
 }
 
-.heading{
+.heading {
   display: flex;
   justify-content: space-between;
 }
 
-.task-card{
+.task-card {
   background-color: grey;
   border: 2px grey;
   border-radius: 10px;
